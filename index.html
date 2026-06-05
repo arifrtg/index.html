@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARIF | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#0f172a,#1e293b,#0c0d0e,#0d0f0f);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+min-height:100vh;
+padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow-x:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+#tsparticles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:0;
+}
+
+.container{
+width:100%;
+max-width:500px;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.2);
+color:white;
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+.profile{
+position:relative;
+}
+
+.profile::before{
+content:"";
+position:absolute;
+width:220px;
+height:220px;
+left:50%;
+transform:translateX(-50%);
+border-radius:50%;
+background:linear-gradient(45deg,#38bdf8,#2563eb,#06b6d4);
+filter:blur(35px);
+opacity:.6;
+z-index:-1;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+from{transform:translateX(-50%) rotate(0deg);}
+to{transform:translateX(-50%) rotate(360deg);}
+}
+
+.profile img{
+width:170px;
+height:170px;
+object-fit:cover;
+border-radius:50%;
+border:4px solid white;
+box-shadow:
+0 0 20px #38bdf8,
+0 0 40px #151718,
+0 0 80px #17191b;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+h1{
+margin-top:15px;
+font-size:32px;
+}
+
+.typing{
+margin-top:10px;
+color:#38bdf8;
+font-weight:bold;
+min-height:24px;
+}
+
+#clock{
+font-size:24px;
+font-weight:bold;
+margin-top:15px;
+}
+
+#date{
+font-size:14px;
+opacity:.8;
+}
+
+.link-card{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:15px;
+margin:10px 0;
+border-radius:15px;
+background:rgba(255,255,255,.15);
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.link-card:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,.25);
+}
+
+.about,.skills,.contact-form,.github{
+margin-top:25px;
+text-align:left;
+}
+
+.bar{
+height:10px;
+background:rgba(255,255,255,.15);
+border-radius:10px;
+overflow:hidden;
+margin:5px 0 15px;
+}
+
+.fill{
+height:100%;
+}
+
+.html{width:85%;background:#040505;}
+.css{width:80%;background:#22c55e;}
+.js{width:70%;background:#facc15;}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:10px;
+}
+
+button{
+padding:12px;
+width:100%;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.social{
+position:fixed;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+z-index:5;
+}
+
+.social a{
+display:block;
+font-size:24px;
+margin:12px 0;
+color:white;
+}
+
+#themeBtn{
+position:fixed;
+top:20px;
+right:20px;
+width:50px;
+height:50px;
+border-radius:50%;
+border:none;
+cursor:pointer;
+z-index:5;
+}
+
+footer{
+margin-top:25px;
+font-size:13px;
+opacity:.8;
+}
+
+.light-mode{
+background:#f5f5f5 !important;
+}
+
+.light-mode .container{
+background:rgba(255,255,255,.95);
+color:#111;
+}
+
+.light-mode .link-card{
+background:rgba(0,0,0,.08);
+color:#111;
+}
+</style>
+</head>
+
+<body>
+
+<div id="tsparticles"></div>
+
+<button id="themeBtn">
+🌙
+</button>
+
+<div class="social">
+<a href="https://github.com/Arif41k41k-ship-it"><i class="fab fa-github"></i></a>
+<a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+<a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+</div>
+
+<div class="container">
+
+<div class="profile">
+<img src="1000029563.jpg" alt="Arif Ritonga">
+
+<h1>ARIF RITONGA</h1>
+
+<div class="typing"></div>
+
+<div id="clock"></div>
+<div id="date"></div>
+</div>
+
+<a class="link-card">
+<i class="fa-solid fa-location-dot"></i>
+Medan, Sumatera Utara
+</a>
+
+<a href="CV-Arif-Ritonga.pdf" download class="link-card">
+<i class="fa-solid fa-file-arrow-down"></i>
+Download CV
+</a>
+
+<a href="tel:+6281274406935" class="link-card">
+<i class="fa-solid fa-phone"></i>
+Hubungi Saya
+</a>
+
+<a href="https://wa.me/6281274406935" class="link-card">
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+</a>
+
+<a href="mailto:arifrtg199@gmail.com" class="link-card">
+<i class="fa-solid fa-envelope"></i>
+arifrtg199@gmail.com
+</a>
+
+<a href="https://github.com/Arif41k41k-ship-it" class="link-card">
+<i class="fab fa-github"></i>
+GitHub
+</a>
+
+<div class="about" data-aos="fade-up">
+<h3>Tentang Saya</h3>
+<p>
+Halo, saya Arif Ritonga. Saya tertarik pada Web Development,
+UI Design, dan teknologi modern. Saya terus belajar
+membangun website yang menarik dan responsif.
+</p>
+</div>
+
+<div class="skills" data-aos="fade-up">
+<h3>Skill</h3>
+
+HTML
+<div class="bar"><div class="fill html"></div></div>
+
+CSS
+<div class="bar"><div class="fill css"></div></div>
+
+JavaScript
+<div class="bar"><div class="fill js"></div></div>
+</div>
+
+<div class="github" data-aos="fade-up">
+<h3>GitHub Stats</h3>
+
+<img width="100%"
+src="https://github-readme-stats.vercel.app/api?username=Arif41k41k-ship-it&show_icons=true&theme=tokyonight">
+
+<br><br>
+
+<img width="100%"
+src="https://github-readme-stats.vercel.app/api/top-langs/?username=Arif41k41k-ship-it&layout=compact&theme=tokyonight">
+</div>
+
+<div class="contact-form" data-aos="fade-up">
+<h3>Hubungi Saya</h3>
+
+<input type="text" placeholder="Nama">
+<input type="email" placeholder="Email">
+<textarea rows="4" placeholder="Pesan"></textarea>
+
+<button>Kirim Pesan</button>
+</div>
+
+<footer>
+© 2026 ARIF - Portfolio Website
+</footer>
+
+</div>
+
+<audio autoplay loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const text="Web Developer | UI Designer | GitHub Enthusiast";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.querySelector(".typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+}
+typing();
+
+function updateClock(){
+const now=new Date();
+
+document.getElementById("clock").innerHTML=
+now.toLocaleTimeString("id-ID");
+
+document.getElementById("date").innerHTML=
+now.toLocaleDateString("id-ID",{
+weekday:'long',
+year:'numeric',
+month:'long',
+day:'numeric'
+});
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+if(localStorage.getItem("theme")==="light"){
+document.body.classList.add("light-mode");
+}
+
+themeBtn.onclick=()=>{
+document.body.classList.toggle("light-mode");
+
+if(document.body.classList.contains("light-mode")){
+localStorage.setItem("theme","light");
+}else{
+localStorage.setItem("theme","dark");
+}
+};
+
+AOS.init({duration:1000});
+
+tsParticles.load("tsparticles",{
+particles:{
+number:{value:80},
+size:{value:2},
+move:{speed:1},
+links:{
+enable:true,
+distance:120
+}
+}
+});
+
+</script>
+
+</body>
+</html>
